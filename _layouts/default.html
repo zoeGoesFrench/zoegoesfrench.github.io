@@ -1,29 +1,25 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<title>{{ page.title }}</title>
-			<!-- link to main stylesheet -->
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-			<link rel="stylesheet" type="text/css" href="/css/main.css">
-		</head>
-		<body>
-			<nav>
-	    		<ul>
-	        		<li><a href="/">Home</a></li>
-		        	<li><a href="/about">Vocabulary</a></li>
-	        		<li><a href="/cv">Lections</a></li>
-	        		<li><a href="/blog">Grammar</a></li>
-	    		</ul>
-			</nav>
-			<div class="container">
-			
-			{{ content }}
-			
-			</div><!-- /.container -->
-			<footer>
-	    		<ul>
-	        		<li><a href="mailto:dafunkysapiens@gmail.com">email</a></li>
-				</ul>
-			</footer>
-		</body>
-	</html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+    <div class="paper-layout mdl-layout mdl-js-layout">
+      {% include header.html %}
+
+      <main class="mdl-layout__content">
+        <div id="container" class="paper-container">
+          <div class="paper-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell">
+            {{ content }}
+          </div>
+        </div>
+        {% include footer.html %}
+      </main>
+    </div>
+
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
+    <script src="{{ 'assets/jekyll-search/jekyll-search.min.js' | prepend: site.baseurl | prepend: site.url}}"></script>
+    <script src="{{ 'scripts/app.js' | prepend: site.baseurl | prepend: site.url}}"></script>
+  </body>
+
+</html>
